@@ -18,6 +18,8 @@ __all__ = [
     "SetOfProcesses",
     "Threat",
     "TM",
+    "Wired",
+    "Wireless"
 ]
 
 import sys
@@ -41,6 +43,8 @@ from .pytm import (
     Server,
     SetOfProcesses,
     Threat,
+    Wired,
+    Wireless,
     var,
 )
 
