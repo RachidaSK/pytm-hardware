@@ -1,3 +1,4 @@
+[
 {
     "SID":"INP01",
     "target": ["Arduino MEGA IOT"],
@@ -10,7 +11,7 @@
     "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. Use Black Hole routing sends",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
-}
+},
 {
     "SID":"INP02",
     "target": ["Arduino MEGA IOT"],
@@ -23,7 +24,7 @@
     "mitigations": "Encourage secure logging to prove the program recieved the data. Fraud prevention, logging, signatures",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP03",
     "target": ["Arduino MEGA IOT"],
@@ -36,7 +37,7 @@
     "mitigations": "Monitor networks for activity, use authentification based exchange between the networks. Implement filtered packets and encryption.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP04",
     "target": ["Arduino MEGA IOT"],
@@ -49,7 +50,7 @@
     "mitigations": "Limit number of requests a server will accept over a certian time window. Use Black Hole routing",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP05",
     "target": ["Arduino MEGA IOT"],
@@ -62,7 +63,7 @@
     "mitigations": "Limit number of requests a server will accept over a certian time window. Use Black Hole routing",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP06",
     "target": ["Arduino MEGA IOT"],
@@ -75,13 +76,12 @@
     "mitigations": "Secure envelopes to ensure protection and integrity of original log/data. Data signiyure used to track traffic.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP07",
     "target": ["Arduino MEGA IOT"],
     "description": "Lower Trusted Subject Updates Logs ",
-    "details": "Letting everyone write to your logs can lead to repudiation 
-    problems. Only allow trusted code to log.",
+    "details": "Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.",
     "Likelihood Of Attack": "High",
     "severity": "High",
     "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
@@ -89,7 +89,7 @@
     "mitigations": "Create secure audit trails. Use digital signatures. Encourage secure logging to prove the program recieved that data. Fraud prevention, logging and signatures.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP08",
     "target": ["Arduino MEGA IOT"],
@@ -99,11 +99,10 @@
     "severity": "High",
     "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
     "prerequisites": "",
-    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends 
-    traffic to a null route and dropped from the network.",
+    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP09",
     "target": ["Arduino MEGA IOT"],
@@ -116,7 +115,7 @@
     "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP010",
     "target": ["Arduino MEGA IOT"],
@@ -129,7 +128,7 @@
     "mitigations": "Use logging when data is recieved to record changes made.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP011",
     "target": ["Arduino MEGA IOT"],
@@ -142,7 +141,7 @@
     "mitigations": "Check the input types and lengths (syntatic validation) to ensure the supplied values ar evalid in the application context (semantic validation). ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP012",
     "target": ["Arduino MEGA IOT"],
@@ -155,7 +154,7 @@
     "mitigations": "Use authentication to make the user identify themselves before the data store. ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP013",
     "target": ["Arduino MEGA IOT"],
@@ -168,7 +167,7 @@
     "mitigations": "Create secure audit trails. Use digital signatures. Encourage secure logging to prove the program receieved that data. Fraud prevention, logging and signitures ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP014",
     "target": ["Arduino MEGA IOT"],
@@ -181,7 +180,7 @@
     "mitigations": "Have strong WEP/WAP encryption on access points, stronger router login credentials, or use VPN.",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP015",
     "target": ["Arduino MEGA IOT"],
@@ -194,7 +193,7 @@
     "mitigations": "Apply least privilege, so regular users cannot tamper with the data. Also provide authentication and logging to see changes and who made the change. ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP016",
     "target": ["Arduino MEGA IOT"],
@@ -207,7 +206,7 @@
     "mitigations": "Establish user authentication when connecting to the PC data store. ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP017",
     "target": ["Arduino MEGA IOT"],
@@ -220,7 +219,7 @@
     "mitigations": "Encourage users to log out, reauthenticate before key actions, and expire sessions after a period of time. ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP018",
     "target": ["Arduino MEGA IOT"],
@@ -233,7 +232,7 @@
     "mitigations": "Apply the principle of &quot;Least Privilege&quot;. Only allows users to have access to specific functions. ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP019",
     "target": ["Arduino MEGA IOT"],
@@ -246,7 +245,7 @@
     "mitigations": "Load balancers and more capacity ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP020",
     "target": ["Arduino MEGA IOT"],
@@ -259,7 +258,7 @@
     "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.  ",
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
- }
+ },
  {
     "SID":"INP021",
     "target": ["Arduino MEGA IOT"],
@@ -273,3 +272,7 @@
     "example": "",
     "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
  }
+
+
+
+]
