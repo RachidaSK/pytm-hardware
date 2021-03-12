@@ -1,7 +1,7 @@
 [
 {
     "SID":"INP01",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Flow Access to Sensitive information is potentially interupted.",
     "details": "Denial of service happens when the process or a datastore is not able to service incoming requests or perform up to spec.",
     "Likelihood Of Attack": "High",
@@ -14,7 +14,7 @@
 },
 {
     "SID":"INP02",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "External Entity use potentially denies recieving data.",
     "details": "Repudiation threats involve an adversary denying that something happened.",
     "Likelihood Of Attack": "High",
@@ -27,7 +27,7 @@
  },
  {
     "SID":"INP03",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Spoofing of the user external destination entity.",
     "details": "Spoofing is when a process or entity is something other than its claimed identity",
     "Likelihood Of Attack": "High",
@@ -40,7 +40,7 @@
  },
  {
     "SID":"INP04",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data flow transfer of data is potentially interupted.",
     "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
     "Likelihood Of Attack": "High",
@@ -53,7 +53,7 @@
  },
  {
     "SID":"INP05",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data flow elevation of privilege is potentially interrupted.",
     "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
     "Likelihood Of Attack": "High",
@@ -66,7 +66,7 @@
  },
  {
     "SID":"INP06",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Logs from unknown source",
     "details": "Identify and authenticaate the source of the logs before accepting them.",
     "Likelihood Of Attack": "High",
@@ -79,7 +79,7 @@
  },
  {
     "SID":"INP07",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Lower Trusted Subject Updates Logs ",
     "details": "Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.",
     "Likelihood Of Attack": "High",
@@ -92,7 +92,7 @@
  },
  {
     "SID":"INP08",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Store Inaccessible ",
     "details": "An external agent prevents access to a data store on the other side of the trust boundary.",
     "Likelihood Of Attack": "High",
@@ -105,7 +105,7 @@
  },
  {
     "SID":"INP09",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Flow Generic Data Flow Is Potentially Interrupted ",
     "details": "An external agent interrupts data flowing across a trust boundary in either direction. ",
     "Likelihood Of Attack": "High",
@@ -118,7 +118,7 @@
  },
  {
     "SID":"INP010",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Store Denies Cloud Server Potentially Writing Data ",
     "details": "Cloud Server claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data",
     "Likelihood Of Attack": "High",
@@ -131,7 +131,7 @@
  },
  {
     "SID":"INP011",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "The Cloud Server Data Store Could Be Corrupted ",
     "details": " Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of Cloud Server . Ensure the integrity of the data flow to the data store",
     "Likelihood Of Attack": "High",
@@ -144,7 +144,7 @@
  },
  {
     "SID":"INP012",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Spoofing of Destination Data Store Cloud Server",
     "details": "Cloud Server may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of Cloud Server . Consider using a standard authentication mechanism to identify the destination data store",
     "Likelihood Of Attack": "High",
@@ -157,7 +157,7 @@
  },
  {
     "SID":"INP013",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Lower Trusted Subject Updates Logs",
     "details": "If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log",
     "Likelihood Of Attack": "High",
@@ -170,7 +170,7 @@
  },
  {
     "SID":"INP014",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": " Authenticated Data Flow Compromised ",
     "details": "An attacker can read or modify data transmitted over an authenticated dataflow. (Man-in-the-Middle) ",
     "Likelihood Of Attack": "High",
@@ -183,7 +183,7 @@
  },
  {
     "SID":"INP015",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "The PC Data Store Could Be Corrupted",
     "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of PC. Ensure the integrity of the data flow to the data store.",
     "Likelihood Of Attack": "High",
@@ -196,7 +196,7 @@
  },
  {
     "SID":"INP016",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": " Spoofing of Destination Data Store PC ",
     "details": "PC may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of PC. Consider using a standard authentication mechanism to identify the destination data store",
     "Likelihood Of Attack": "High",
@@ -209,7 +209,7 @@
  },
  {
     "SID":"INP017",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": " Elevation by Changing the Execution Flow in Connects Board to the Computer for Programming ",
     "details": "An attacker may pass data into Connects Board to the Computer for Programming in order to change the flow of program execution within Connects Board to the Computer for Programming to the attacker's choosing.",
     "Likelihood Of Attack": "High",
@@ -222,7 +222,7 @@
  },
  {
     "SID":"INP018",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Connects Board to the Computer for Programming May be Subject to Elevation of Privilege Using Remote Code Execution",
     "details": "User may be able to remotely execute code for Connects Board to the Computer for Programming. ",
     "Likelihood Of Attack": "High",
@@ -235,7 +235,7 @@
  },
  {
     "SID":"INP019",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Flow ICSP Is Potentially Interrupted ",
     "details": " An external agent interrupts data flowing across a trust boundary in either direction.",
     "Likelihood Of Attack": "High",
@@ -248,7 +248,7 @@
  },
  {
     "SID":"INP020",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Potential Process Crash or Stop for Connects Board to the Computer for Programming ",
     "details": " Connects Board to the Computer for Programming crashes, halts, stops or runs slowly; in all cases violating an availability metric ",
     "Likelihood Of Attack": "High",
@@ -261,7 +261,7 @@
  },
  {
     "SID":"INP021",
-    "target": ["Arduino MEGA IOT"],
+    "target": ["Wireless"],
     "description": "Data Flow Sniffing ",
     "details": "Data flowing across ICSP may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow ",
     "Likelihood Of Attack": "High",
