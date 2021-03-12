@@ -1,1 +1,275 @@
-[]
+{
+    "SID":"INP01",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Flow Access to Sensitive information is potentially interupted.",
+    "details": "Denial of service happens when the process or a datastore is not able to service incoming requests or perform up to spec.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. Use Black Hole routing sends",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+}
+{
+    "SID":"INP02",
+    "target": ["Arduino MEGA IOT"],
+    "description": "External Entity use potentially denies recieving data.",
+    "details": "Repudiation threats involve an adversary denying that something happened.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Encourage secure logging to prove the program recieved the data. Fraud prevention, logging, signatures",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP03",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Spoofing of the user external destination entity.",
+    "details": "Spoofing is when a process or entity is something other than its claimed identity",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Monitor networks for activity, use authentification based exchange between the networks. Implement filtered packets and encryption.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP04",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data flow transfer of data is potentially interupted.",
+    "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Limit number of requests a server will accept over a certian time window. Use Black Hole routing",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP05",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data flow elevation of privilege is potentially interrupted.",
+    "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Limit number of requests a server will accept over a certian time window. Use Black Hole routing",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP06",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Logs from unknown source",
+    "details": "Identify and authenticaate the source of the logs before accepting them.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Secure envelopes to ensure protection and integrity of original log/data. Data signiyure used to track traffic.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP07",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Lower Trusted Subject Updates Logs ",
+    "details": "Letting everyone write to your logs can lead to repudiation 
+    problems. Only allow trusted code to log.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Create secure audit trails. Use digital signatures. Encourage secure logging to prove the program recieved that data. Fraud prevention, logging and signatures.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP08",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Store Inaccessible ",
+    "details": "An external agent prevents access to a data store on the other side of the trust boundary.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends 
+    traffic to a null route and dropped from the network.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP09",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Flow Generic Data Flow Is Potentially Interrupted ",
+    "details": "An external agent interrupts data flowing across a trust boundary in either direction. ",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP010",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Store Denies Cloud Server Potentially Writing Data ",
+    "details": "Cloud Server claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Use logging when data is recieved to record changes made.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP011",
+    "target": ["Arduino MEGA IOT"],
+    "description": "The Cloud Server Data Store Could Be Corrupted ",
+    "details": " Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of Cloud Server . Ensure the integrity of the data flow to the data store",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Check the input types and lengths (syntatic validation) to ensure the supplied values ar evalid in the application context (semantic validation). ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP012",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Spoofing of Destination Data Store Cloud Server",
+    "details": "Cloud Server may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of Cloud Server . Consider using a standard authentication mechanism to identify the destination data store",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Use authentication to make the user identify themselves before the data store. ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP013",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Lower Trusted Subject Updates Logs",
+    "details": "If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Create secure audit trails. Use digital signatures. Encourage secure logging to prove the program receieved that data. Fraud prevention, logging and signitures ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP014",
+    "target": ["Arduino MEGA IOT"],
+    "description": " Authenticated Data Flow Compromised ",
+    "details": "An attacker can read or modify data transmitted over an authenticated dataflow. (Man-in-the-Middle) ",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Have strong WEP/WAP encryption on access points, stronger router login credentials, or use VPN.",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP015",
+    "target": ["Arduino MEGA IOT"],
+    "description": "The PC Data Store Could Be Corrupted",
+    "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of PC. Ensure the integrity of the data flow to the data store.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Apply least privilege, so regular users cannot tamper with the data. Also provide authentication and logging to see changes and who made the change. ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP016",
+    "target": ["Arduino MEGA IOT"],
+    "description": " Spoofing of Destination Data Store PC ",
+    "details": "PC may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of PC. Consider using a standard authentication mechanism to identify the destination data store",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Establish user authentication when connecting to the PC data store. ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP017",
+    "target": ["Arduino MEGA IOT"],
+    "description": " Elevation by Changing the Execution Flow in Connects Board to the Computer for Programming ",
+    "details": "An attacker may pass data into Connects Board to the Computer for Programming in order to change the flow of program execution within Connects Board to the Computer for Programming to the attacker's choosing.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Encourage users to log out, reauthenticate before key actions, and expire sessions after a period of time. ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP018",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Connects Board to the Computer for Programming May be Subject to Elevation of Privilege Using Remote Code Execution",
+    "details": "User may be able to remotely execute code for Connects Board to the Computer for Programming. ",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Apply the principle of &quot;Least Privilege&quot;. Only allows users to have access to specific functions. ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP019",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Flow ICSP Is Potentially Interrupted ",
+    "details": " An external agent interrupts data flowing across a trust boundary in either direction.",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Load balancers and more capacity ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP020",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Potential Process Crash or Stop for Connects Board to the Computer for Programming ",
+    "details": " Connects Board to the Computer for Programming crashes, halts, stops or runs slowly; in all cases violating an availability metric ",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.  ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
+ {
+    "SID":"INP021",
+    "target": ["Arduino MEGA IOT"],
+    "description": "Data Flow Sniffing ",
+    "details": "Data flowing across ICSP may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow ",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+    "prerequisites": "",
+    "mitigations": "Encrypt data being transfered to prevent sniffing.  ",
+    "example": "",
+    "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
+ }
