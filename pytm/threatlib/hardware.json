@@ -1,7 +1,7 @@
 [
     {
         "SID":"UART01",
-        "target": ["UART"],
+        "target": ["UART", "WIFI"],
         "description": "External Entity Unauthenticated User Potentially Denies Receiving Data. This attack is through a wireless connection.",
         "details": "Unauthenticated User claims that it did not receive data from a process on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "Medium",
@@ -11,7 +11,7 @@
      },
     {
         "SID":"UART02",
-        "target": ["UART"],
+        "target": ["UART", "WIFI"],
         "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a wireless connection.",
         "details": "Unauthenticated User may use spoofing and this may lead to data being sent to the attacker's target instead of Attacker. Consider using a standard authentication mechanism to identify the external entity.",
         "Likelihood Of Attack": "High",
@@ -41,7 +41,7 @@
     },
     {
         "SID":"CLOUD01",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": "Data Logs from an Unknown Source This attack is through a wireless connection.",
         "details": "Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them.  ",
         "Likelihood Of Attack": "High",
@@ -51,7 +51,7 @@
     },
     {
         "SID":"CLOUD02",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": "Lower Trusted Subject Updates Logs This attack is through a wireless connection.",
         "details": " If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log. ",
         "Likelihood Of Attack": "High",
@@ -61,7 +61,7 @@
     },
     {
         "SID":"CLOUD03",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": "Data Store Inaccessible This attack is through a wireless connection.",
         "details": "An external agent prevents access to a data store on the other side of the trust boundary. ",
         "Likelihood Of Attack": "High",
@@ -71,7 +71,7 @@
     },
     {
         "SID":"CLOUD04",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": " Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a wireless connection.",
         "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
         "Likelihood Of Attack": "High",
@@ -81,7 +81,7 @@
     },
     {
         "SID":"CLOUD05",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": " Data Store Denies Cloud Server Potentially Writing Data This attack is through a wireless connection.",
         "details": "Cloud Server claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "High",
@@ -91,7 +91,7 @@
     },
     {
         "SID":"CLOUD06",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": "The Cloud Server Data Store Could Be Corrupted This attack is through a wireless connection.",
         "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of Cloud Server . Ensure the integrity of the data flow to the data store. ",
         "Likelihood Of Attack": "High",
@@ -101,7 +101,7 @@
     },
     {
         "SID":"CLOUD07",
-        "target": ["CLOUDSERVER"],
+        "target": ["CLOUDSERVER", "WIFI"],
         "description": "Spoofing of Destination Data Store Cloud Server This attack is through a wireless connection.",
         "details": "Cloud Server may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of Cloud Server . Consider using a standard authentication mechanism to identify the destination data store.",
         "Likelihood Of Attack": "High",
@@ -111,7 +111,7 @@
     },
     {
         "SID":"PC01",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "Data Logs from an Unknown Source This attack is through a wired connection.",
         "details": "Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them. ",
         "Likelihood Of Attack": "High",
@@ -121,7 +121,7 @@
     },
     {
         "SID":"PC02",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": " Lower Trusted Subject Updates Logs This attack is through a wired connection.",
         "details": " If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.",
         "Likelihood Of Attack": "High",
@@ -131,7 +131,7 @@
     },
     {
         "SID":"PC03",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "Authenticated Data Flow Compromised This attack is through a wired connection.",
         "details": " An Unauthenticated User can read or modify data transmitted over an authenticated dataflow. (Man-In-the-Middle)",
         "Likelihood Of Attack": "High",
@@ -141,7 +141,7 @@
     },
     {
         "SID":"PC04",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "Data Store Inaccessible This attack is through a wired connection.",
         "details": "An external agent prevents access to a data store on the other side of the trust boundary.",
         "Likelihood Of Attack": "High",
@@ -151,7 +151,7 @@
     },
     {
         "SID":"PC05",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a wired connection.",
         "details": " An external agent interrupts data flowing across a trust boundary in either direction. ",
         "Likelihood Of Attack": "High",
@@ -161,7 +161,7 @@
     },
     {
         "SID":"PC06",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "Data Store Denies PC Potentially Writing Data This attack is through a wired connection.",
         "details": " PC claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "High",
@@ -171,7 +171,7 @@
     },
     {
         "SID":"PC07",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": "The PC Data Store Could Be Corrupted This attack is through a wired connection.",
         "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of PC. Ensure the integrity of the data flow to the data store.",
         "Likelihood Of Attack": "High",
@@ -181,7 +181,7 @@
     },
     {
         "SID":"PC08",
-        "target": ["PC"],
+        "target": ["PC", "WIRED"],
         "description": " Spoofing of Destination Data Store PC. This attack is through a wired connection.",
         "details": " PC may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of PC. Consider using a standard authentication mechanism to identify the destination data store.        ",
         "Likelihood Of Attack": "High",
@@ -191,7 +191,7 @@
     },
     {
         "SID":"ICSP01",
-        "target": ["ICSP"],
+        "target": ["ICSP", "WIRED"],
         "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a wired connection.",
         "details": "Unauthenticated User may use spoofing and this may lead to data being sent to the attacker's target instead of Authenticated User. Consider using a standard authentication mechanism to identify the external entity.",
         "Likelihood Of Attack": "Medium",
