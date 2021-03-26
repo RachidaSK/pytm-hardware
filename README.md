@@ -319,106 +319,27 @@ matching elements connecting to SQL datastores, would be `any(f.sink.oneOf(Datas
 ## Currently supported threats
 
 ```text
-INP01 - Buffer Overflow via Environment Variables
-INP02 - Overflow Buffers
-INP03 - Server Side Include (SSI) Injection
-CR01 - Session Sidejacking
-INP04 - HTTP Request Splitting
-CR02 - Cross Site Tracing
-INP05 - Command Line Execution through SQL Injection
-INP06 - SQL Injection through SOAP Parameter Tampering
-SC01 - JSON Hijacking (aka JavaScript Hijacking)
-LB01 - API Manipulation
-AA01 - Authentication Abuse/ByPass
-DS01 - Excavation
-DE01 - Interception
-DE02 - Double Encoding
-API01 - Exploit Test APIs
-AC01 - Privilege Abuse
-INP07 - Buffer Manipulation
-AC02 - Shared Data Manipulation
-DO01 - Flooding
-HA01 - Path Traversal
-AC03 - Subverting Environment Variable Values
-DO02 - Excessive Allocation
-DS02 - Try All Common Switches
-INP08 - Format String Injection
-INP09 - LDAP Injection
-INP10 - Parameter Injection
-INP11 - Relative Path Traversal
-INP12 - Client-side Injection-induced Buffer Overflow
-AC04 - XML Schema Poisoning
-DO03 - XML Ping of the Death
-AC05 - Content Spoofing
-INP13 - Command Delimiters
-INP14 - Input Data Manipulation
-DE03 - Sniffing Attacks
-CR03 - Dictionary-based Password Attack
-API02 - Exploit Script-Based APIs
-HA02 - White Box Reverse Engineering
-DS03 - Footprinting
-AC06 - Using Malicious Files
-HA03 - Web Application Fingerprinting
-SC02 - XSS Targeting Non-Script Elements
-AC07 - Exploiting Incorrectly Configured Access Control Security Levels
-INP15 - IMAP/SMTP Command Injection
-HA04 - Reverse Engineering
-SC03 - Embedding Scripts within Scripts
-INP16 - PHP Remote File Inclusion
-AA02 - Principal Spoof
-CR04 - Session Credential Falsification through Forging
-DO04 - XML Entity Expansion
-DS04 - XSS Targeting Error Pages
-SC04 - XSS Using Alternate Syntax
-CR05 - Encryption Brute Forcing
-AC08 - Manipulate Registry Information
-DS05 - Lifting Sensitive Data Embedded in Cache
-SC05 - Removing Important Client Functionality
-INP17 - XSS Using MIME Type Mismatch
-AA03 - Exploitation of Trusted Credentials
-AC09 - Functionality Misuse
-INP18 - Fuzzing and observing application log data/errors for application mapping
-CR06 - Communication Channel Manipulation
-AC10 - Exploiting Incorrectly Configured SSL
-CR07 - XML Routing Detour Attacks
-AA04 - Exploiting Trust in Client
-CR08 - Client-Server Protocol Manipulation
-INP19 - XML External Entities Blowup
-INP20 - iFrame Overlay
-AC11 - Session Credential Falsification through Manipulation
-INP21 - DTD Injection
-INP22 - XML Attribute Blowup
-INP23 - File Content Injection
-DO05 - XML Nested Payloads
-AC12 - Privilege Escalation
-AC13 - Hijacking a privileged process
-AC14 - Catching exception throw/signal from privileged block
-INP24 - Filter Failure through Buffer Overflow
-INP25 - Resource Injection
-INP26 - Code Injection
-INP27 - XSS Targeting HTML Attributes
-INP28 - XSS Targeting URI Placeholders
-INP29 - XSS Using Doubled Characters
-INP30 - XSS Using Invalid Characters
-INP31 - Command Injection
-INP32 - XML Injection
-INP33 - Remote Code Inclusion
-INP34 - SOAP Array Overflow
-INP35 - Leverage Alternate Encoding
-DE04 - Audit Log Manipulation
-AC15 - Schema Poisoning
-INP36 - HTTP Response Smuggling
-INP37 - HTTP Request Smuggling
-INP38 - DOM-Based XSS
-AC16 - Session Credential Falsification through Prediction
-INP39 - Reflected XSS
-INP40 - Stored XSS
-AC17 - Session Hijacking - ServerSide
-AC18 - Session Hijacking - ClientSide
-INP41 - Argument Injection
-AC19 - Reusing Session IDs (aka Session Replay) - ServerSide
-AC20 - Reusing Session IDs (aka Session Replay) - ClientSide
-AC21 - Cross Site Request Forgery
+UART01 - External Entity Unauthenticated User Potentially Denies Receiving Data
+UART02 - Spoofing of the Unauthenticated User External Destination Entity
+WIFI01 - Spoofing of the Attacker External Destination Entity
+WIFI02 - External Entity Attacker Potentially Denies Receiving Data
+CLOUD01 - Data Logs from an Unknown Source
+CLOUD02 - Lower Trusted Subject Updates Logs
+CLOUD03 - Data Store Inaccessible
+CLOUD04 - Data Flow Generic Data Flow Is Potentially Interrupted
+CLOUD05 - Data Store Denies Cloud Server Potentially Writing Data
+CLOUD06 - The Cloud Server Data Store Could Be Corrupted
+CLOUD07 - Spoofing of Destination Data Store Cloud Server
+PC01 - Data Logs from an Unknown Source
+PC02 - Lower Trusted Subject Updates Logs
+PC03 - Authenticated Data Flow Compromised
+PC04 - Data Store Inaccessible
+PC05 - Data Flow Generic Data Flow Is Potentially Interrupted
+PC06 - Data Store Denies PC Potentially Writing Data
+PC07 - The PC Data Store Could Be Corrupted
+PC08 - Spoofing of Destination Data Store PC
+ICSP01 - Spoofing of the Unauthenticated User External Destination Entity
+
 
 
 
