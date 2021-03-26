@@ -2,201 +2,535 @@
     {
         "SID":"UART01",
         "target": ["UART", "WIFI"],
-        "description": "External Entity Unauthenticated User Potentially Denies Receiving Data. This attack is through a wireless connection.",
+        "description": "External Entity Unauthenticated User Potentially Denies Receiving Data. This attack is through a WIFI connection.",
         "details": "Unauthenticated User claims that it did not receive data from a process on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "Medium",
         "severity": "Medium",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Consider using logging or auditing to record the source, time, and summary of the received data. "
      },
     {
         "SID":"UART02",
         "target": ["UART", "WIFI"],
-        "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a wireless connection.",
+        "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a WIFI connection.",
         "details": "Unauthenticated User may use spoofing and this may lead to data being sent to the attacker's target instead of Attacker. Consider using a standard authentication mechanism to identify the external entity.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Consider using a standard authentication mechanism to identify the external entity."
     },
     {
         "SID":"WIFI01",
         "target": ["WIFI"],
-        "description": "Spoofing of the Attacker External Destination Entity. This attack is through a wireless connection.",
+        "description": "Spoofing of the Attacker External Destination Entity. This attack is through a WIFI connection.",
         "details": "User may be spoofed by an attacker and this may lead to data being sent to the attacker's target instead of User . Consider using a standard authentication mechanism to identify the external entity.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Have strong WEP/WAP encryption on access points, stronger router login credentials, or use VPN."
     },
     {
         "SID":"WIFI02",
         "target": ["WIFI"],
-        "description": "External Entity Attacker Potentially Denies Receiving Data. This attack is through a wireless connection.",
+        "description": "External Entity Attacker Potentially Denies Receiving Data. This attack is through a WIFI connection.",
         "details": "Unauthenticated User claims that it did not receive data from a process on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Encourage secure logging so we could record if the user actually receieved this data."
     },
     {
         "SID":"CLOUD01",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": "Data Logs from an Unknown Source This attack is through a wireless connection.",
+        "description": "Data Logs from an Unknown Source This attack is through a WIFI connection.",
         "details": "Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them.  ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Identify and authenticate the source of the logs before accepting them."
     },
     {
         "SID":"CLOUD02",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": "Lower Trusted Subject Updates Logs This attack is through a wireless connection.",
+        "description": "Lower Trusted Subject Updates Logs This attack is through a WIFI connection.",
         "details": " If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log. ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Only allow trusted code to log. "
     },
     {
         "SID":"CLOUD03",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": "Data Store Inaccessible This attack is through a wireless connection.",
+        "description": "Data Store Inaccessible This attack is through a WIFI connection.",
         "details": "An external agent prevents access to a data store on the other side of the trust boundary. ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network. "
     },
     {
         "SID":"CLOUD04",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": " Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a wireless connection.",
+        "description": " Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a WIFI connection.",
         "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network. "
     },
     {
         "SID":"CLOUD05",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": " Data Store Denies Cloud Server Potentially Writing Data This attack is through a wireless connection.",
+        "description": " Data Store Denies Cloud Server Potentially Writing Data This attack is through a WIFI connection.",
         "details": "Cloud Server claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Use logging when data is recieved to record changes made."
     },
     {
         "SID":"CLOUD06",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": "The Cloud Server Data Store Could Be Corrupted This attack is through a wireless connection.",
+        "description": "The Cloud Server Data Store Could Be Corrupted This attack is through a WIFI connection.",
         "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of Cloud Server . Ensure the integrity of the data flow to the data store. ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Check the input types and lengths (syntatic validation) to ensure the supplied values ar evalid in the application context (semantic validation)."
     },
     {
         "SID":"CLOUD07",
         "target": ["CLOUDSERVER", "WIFI"],
-        "description": "Spoofing of Destination Data Store Cloud Server This attack is through a wireless connection.",
+        "description": "Spoofing of Destination Data Store Cloud Server This attack is through a WIFI connection.",
         "details": "Cloud Server may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of Cloud Server . Consider using a standard authentication mechanism to identify the destination data store.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Use authentication to make the user identify themselves before the data store."
     },
     {
         "SID":"PC01",
         "target": ["PC", "WIRED"],
-        "description": "Data Logs from an Unknown Source This attack is through a wired connection.",
+        "description": "Data Logs from an Unknown Source This attack is through a WIRED connection.",
         "details": "Do you accept logs from unknown or weakly authenticated users or systems? Identify and authenticate the source of the logs before accepting them. ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Identify and authenticate the source of the logs before accepting them.   "
     },
     {
         "SID":"PC02",
         "target": ["PC", "WIRED"],
-        "description": " Lower Trusted Subject Updates Logs This attack is through a wired connection.",
+        "description": " Lower Trusted Subject Updates Logs This attack is through a WIRED connection.",
         "details": " If you have trust levels, is anyone other outside of the highest trust level allowed to log? Letting everyone write to your logs can lead to repudiation problems. Only allow trusted code to log.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Only allow trusted code to log."
     },
     {
         "SID":"PC03",
         "target": ["PC", "WIRED"],
-        "description": "Authenticated Data Flow Compromised This attack is through a wired connection.",
+        "description": "Authenticated Data Flow Compromised This attack is through a WIRED connection.",
         "details": " An Unauthenticated User can read or modify data transmitted over an authenticated dataflow. (Man-In-the-Middle)",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Have strong WEP/WAP encryption on access points, stronger router login credentials, or use VPN."
     },
     {
         "SID":"PC04",
         "target": ["PC", "WIRED"],
-        "description": "Data Store Inaccessible This attack is through a wired connection.",
+        "description": "Data Store Inaccessible This attack is through a WIRED connection.",
         "details": "An external agent prevents access to a data store on the other side of the trust boundary.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": " Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.        "
     },
     {
         "SID":"PC05",
         "target": ["PC", "WIRED"],
-        "description": "Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a wired connection.",
+        "description": "Data Flow Generic Data Flow Is Potentially Interrupted This attack is through a WIRED connection.",
         "details": " An external agent interrupts data flowing across a trust boundary in either direction. ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing sends traffic to a null route and dropped from the network.        "
     },
     {
         "SID":"PC06",
         "target": ["PC", "WIRED"],
-        "description": "Data Store Denies PC Potentially Writing Data This attack is through a wired connection.",
+        "description": "Data Store Denies PC Potentially Writing Data This attack is through a WIRED connection.",
         "details": " PC claims that it did not write data received from an entity on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Encourage secure logging to record the source, time and summary of recieved data. "
     },
     {
         "SID":"PC07",
         "target": ["PC", "WIRED"],
-        "description": "The PC Data Store Could Be Corrupted This attack is through a wired connection.",
+        "description": "The PC Data Store Could Be Corrupted This attack is through a WIRED connection.",
         "details": "Data flowing across Generic Data Flow may be tampered with by an attacker. This may lead to corruption of PC. Ensure the integrity of the data flow to the data store.",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Apply least privilege, so regular users cannot tamper with the data. Also provide authentication and logging to see changes and who made the change.     "
     },
     {
         "SID":"PC08",
         "target": ["PC", "WIRED"],
-        "description": " Spoofing of Destination Data Store PC. This attack is through a wired connection.",
+        "description": " Spoofing of Destination Data Store PC. This attack is through a WIRED connection.",
         "details": " PC may be spoofed by an attacker and this may lead to data being written to the attacker's target instead of PC. Consider using a standard authentication mechanism to identify the destination data store.        ",
         "Likelihood Of Attack": "High",
         "severity": "High",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Establish user authentication when connecting to the PC data store. "
     },
     {
         "SID":"ICSP01",
         "target": ["ICSP", "WIRED"],
-        "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a wired connection.",
+        "description": "Spoofing of the Unauthenticated User External Destination Entity. This attack is through a WIRED connection.",
         "details": "Unauthenticated User may use spoofing and this may lead to data being sent to the attacker's target instead of Authenticated User. Consider using a standard authentication mechanism to identify the external entity.",
         "Likelihood Of Attack": "Medium",
         "severity": "Medium",
-        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-Wireless is False and target.checksCLOUDSERVER01-WirelessBounds is False",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesCLOUDSERVER01-WIFI is False and target.checksCLOUDSERVER01-WIFIBounds is False",
         "mitigations": "Establish user authentication. "
     }
+    ,
+    {
+        "SID":"ICSP02",
+        "target": ["ICSP" , "WIRED"],
+        "description": "Potential Data Repudation by Connects Board to the Computer for Programming",
+        "details": "Connects Board to the Computer for Programming claims that it did not recieve data from a source outside the trust boundary.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Encourage secure logging to prove the program recieved that data."
+       
+        
+    },
+    {
+        "SID":"ICSP03",
+        "target": ["ICSP", "WIRED"],
+        "description": "Elevation using Impersonation",
+        "details": "A user subject gains increased capability or privilege by taking advantage of an implementation bug.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication"
+       
+        
+     }
+     ,
+     {
+        "SID":"ICSP04",
+        "target": ["ICSP","WIRED"],
+        "description": "Potential Lack of Input Validation for Connects Board to the Computer for Programming",
+        "details": "Data flowing across ICSP may be tampered with by an attacker. This may lead to a denial of service, elevation of privilege, or information disclosure attack.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Consider all paths and the way they handle data. Verify that all inputs are verified for correctness using an approved list input validation approach."
+       
+        
+     },
+     {
+        "SID":"ICSP05",
+        "target": ["ICSP","WIRED"],
+        "description": "Spoofing the Connects Board to the Computer for Programming Process",
+        "details": "Connects Board to the Computer for Programming may be spoofed by an attacker and this may lead to information disclosure by an Unauthenticated User.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication."
+       
+        
+     },
+     {
+        "SID":"SPI01",
+        "target": ["SPI", "WIRED"],
+        "description": "Unauthenticated User claims that it did not receive data from a process on the other side of the trust boundary.",
+        "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Consider using logging or auditing to record the source, time, and summaryof the received data."
+       
+        
+     },
+     {
+        "SID":"SPI02",
+        "target": ["SPI", "WIRED"],
+        "description": "Spoofing of the Unauthenticated User External Destination Entity",
+        "details": "Unauthenticated User may use spoofing and this may lead to data being sent to the attacker's target instead of the standard user.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Consider using a standard authentication mechanism to identify the external entity."
+       
+        
+     },
+     {
+        "SID":"SPI03",
+        "target": ["SPI", "WIRED"],
+        "description": "Elevation by Changing the Execution Flow in Send Data Between Microcontrollers and Small Peripherals",
+        "details": "An Unauthenticated User may pass data into Send Data Between Microcontrollers and Small Peripherals in order to change the flow of program execution within the process to the attacker's choosing.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication."
+       
+        
+     },
+     {
+        "SID":"SPI04",
+        "target": ["SPI", "WIRED"],
+        "description": "Send Data Between Microcontrollers and Small Peripherals May be subject to Elevation of Privilege Using Remote Code Execution",
+        "details": "Unauthenticated User may be able to remotely execute code for Send Data Between Microcontrollers and Small Peripherals.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication."
+       
+        
+     },
+     {
+        "SID":"SPI05",
+        "target": ["SPI", "WIRED"],
+        "description": "Elevation using Impersonation",
+        "details": "Send Data Between Microcontrollers and Small Peripherals may be able to impersonate the context of Unauthenticated User in order to gain additional privilege.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication."
+       
+        
+     },
+     {
+        "SID":"SPI06",
+        "target": ["SPI", "WIRED"],
+        "description": "Data Flow SPI is Potentially Interrupted",
+        "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing to send traffic to a null route and drop it from the network."
+       
+        
+     },
+     {
+        "SID":"SPI07",
+        "target": ["SPI", "WIRED"],
+        "description": "Potential Process Crash or Stop for Send Data Between Microcontrollers and Small Peripherals",
+        "details": "Send Data Between Microcontrollers and Small Peripherals crashes, halts, stops, or runs slowly; in all cases violating an availability metric.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Ensure availability by limiting the number of request a server will accept over a certain time window. You could also use Black Hole routing to send traffic to a null route and drop it from the network."
+       
+        
+     },
+     {
+        "SID":"SPI08",
+        "target": ["SPI", "WIRED"],
+        "description": "Potential Data Repudiation by Send Data Between Microcontrollers and Small Peripherals",
+        "details": "Send Data Between Microcontrollers and Small Peripherals claims that it did not receieve data from a source outside the trust boundary.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Consider using logging or auditing to record the source, time, and summary of the receieved data."
+       
+        
+     },
+     {
+        "SID":"UART03",
+        "target": ["UART" ,"WIFI"],
+        "description": "Elevation by Changing the Execution Flow in Generic Process",
+        "details": "An Unauthenticated User may pass data into Sends and Transmits Signals WIFIly in order to chagne the flow of program execution within this process to the attackers choosing.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Encourage users to log out, reauthenticate before key actions, and expire sessions after a period of time."
+       
+        
+     },
+     {
+        "SID":"UART04",
+        "target": ["UART", "WIFI"],
+        "description": "Elevation by Changing the Execution Flow in Sends and Transmits Signals WIFIly",
+        "details": "An Unauthenticated User may pass data into Sends and Transmits Signals WIFIly in order to chagne the flow of program execution within this process to the attackers choosing.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Authenticate the user before allowing them to perform certain tasks."
+       
+        
+     },
+     {
+        "SID":"UART05",
+        "target": ["UART", "WIFI"],
+        "description": "Sends and Transmits Signals WIFIly May be Subject to Elevation of Privilege Using Remote Code Execution",
+        "details": "Unauthenticated User may be able to remote execute code for Sends and Transmits Signals WIFIly.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Authenticate the user and establish least privilege."
+       
+        
+     },
+     {
+        "SID":"UART06",
+        "target": ["UART", "WIFI"],
+        "description": " Potential Process Crash or Stop for Sends and Transmits Signals WIFIly ",
+        "details": "Sends and Transmits Signals WIFIly crashes, halts, stops, or runs slowly; in all cases violating an availability metric.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Ensure availability by limiting number of request per server, Use black hole routing and send traffic to null route to be dropped from network."
+       
+        
+     },
+     {
+        "SID":"WIFI03",
+        "target": ["WIFI"],
+        "description": "Spoofing the Unauthenticated User External Entity",
+        "details": "Unauthenticated User may use spoofing and this may lead to unauthorized access to Connect to the Board.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Force user to authenticate themselves to proceed."
+       
+        
+     },
+     {
+        "SID":"WIFI04",
+        "target": ["WIFI"],
+        "description": "Elevation Using Impersonation",
+        "details": "Connect to the Board may be able to impersonate the context of User in order to gain additional privilege.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Establish user authentication."
+       
+        
+     },
+     {
+        "SID":"WIFI05",
+        "target": ["WIFI"],
+        "description": "Spoofing the Connect to the Board Process",
+        "details": "Connect to the Board may be spoofed by an attacker and this may lead to information disclosure by Unauthenticated User.",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Use user authentication to prevent spoofing."
+       
+        
+     },
+     {
+        "SID":"WIFI06",
+        "target": ["WIFI"],
+        "description": "Potential Lack of Input Validation for Connect to the Board",
+        "details": "Data flowing across Wifi may be tampered with by an attacker. This may lead to denial of service, elevation of privilege, or an information disclosure attack by Connect to the Board. Failure to verify that input is as expected is a root cause of a very large number of exploitable issues.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Check the input types and lengths (syntatic validation) to ensure the supplied values are valid in the application context (semantic validation)."
+       
+        
+     },
+     {
+        "SID":"WIFI07",
+        "target": ["WIFI"],
+        "description": "Potential Data Repudation by Connect to Board ",
+        "details": "Connect to the Board claims that it did not recieve data from a source outside the trust boundary.",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+        
+        "mitigations": "Use logging when data is recieved to record change made. "
+       
+        
+     }
+     ,
+    
+     {
+       "SID":"WIFI08",
+       "target": ["WIFI"],
+       "description": "Data Flow Sniffing",
+       "details": "Data flowing across Wifi may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. ",
+       "Likelihood Of Attack": "Medium",
+       "severity": "Medium",
+       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+       "mitigations": "Keep the data encrypted while being sent through wifi. Consider encrypting wifi and securing it."
+       
+      
+       
+    }
+    ,
+    
+    {
+       "SID":"WIFI09",
+       "target": ["WIFI"],
+       "description": "Potential Process Crash or Stop for Connect to the Board ",
+       "details": "Connect to the Board crashes, halts, stops or runs slowly; in all cases violating an availability metric.",
+       "Likelihood Of Attack": "High",
+       "severity": "High",
+       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+       
+       "mitigations": "Ensure availability by limiting number of request per server, Use black hole routing and send traffic to null route to be dropped from network."
+      
+       
+    },
+    
+    {
+       "SID":"WIFI10",
+       "target": ["WIFI"],
+       "description": "Denial of Service happens when the process or datastore is not able to service incoming requests or perform up to spec.",
+       "details": "An external agent interrupts data flowing across a trusted boundary in either direction.",
+       "Likelihood Of Attack": "Medium",
+       "severity": "Medium",
+       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+       
+       "mitigations": "Have a backup connection ready at all times. You should also have a strong wifi connection to prevent the detection of your router's IP address. "
+      
+       
+    },
+    
+    {
+       "SID":"WIFI11",
+       "target": ["WIFI"],
+       "description": "Connect to the Board May be Subject to Elevation of Privilege Using Remote Code Execution",
+       "details": "Attack may be able to remotely execute code for Connects to the Board.",
+       "Likelihood Of Attack": "High",
+       "severity": "High",
+       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
+       
+       "mitigations": "Apply the principle of Least Privilege. Only allows users to have access to specific functions."
+      
+       
+    }
+
 ]
