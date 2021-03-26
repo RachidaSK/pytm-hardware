@@ -1,7 +1,7 @@
 [
    {
       "SID":"UART01-Wireless",
-      "target": ["WIFI"],
+      "target": ["Wireless"],
       "description": "Data Flow Access to Sensitive Information Is Potentially Interrupted ",
       "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
       "Likelihood Of Attack": "High",
@@ -11,7 +11,7 @@
    },
   {
       "SID":"UART02-Wireless",
-      "target": ["WIFI"],
+      "target": ["Wireless"],
       "description": "External Entity use potentially denies recieving data.",
       "details": "User claims that it did not receive data from a process on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
       "Likelihood Of Attack": "High",
@@ -21,7 +21,7 @@
   },
   {
       "SID":"UART03-Wireless",
-      "target": ["WIFI"],
+      "target": ["Wireless"],
       "description": "Spoofing of the user external destination entity.",
       "details": "User may be spoofed by an attacker and this may lead to data being sent to the attacker's target instead of User . Consider using a standard authentication mechanism to identify the external entity.",
       "Likelihood Of Attack": "High",
@@ -30,8 +30,8 @@
       "mitigations": "Monitor networks for activity, use authentification based exchange between the networks. Implement filtered packets and encryption."
   },
   {
-      "SID":"WIFI01-Wireless",
-      "target": ["WIFI"],
+      "SID":"Wireless01-Wireless",
+      "target": ["Wireless"],
       "description": "Spoofing of the User External Destination Entity",
       "details": "User may be spoofed by an attacker and this may lead to data being sent to the attacker's target instead of User . Consider using a standard authentication mechanism to identify the external entity. (Eavesdropping)",
       "Likelihood Of Attack": "High",
@@ -40,8 +40,8 @@
       "mitigations": "Have strong WEP/WAP encryption on access points, stronger router login credentials, or use VPN."
   },
   {
-      "SID":"WIFI02-Wireless",
-      "target": ["WIFI"],
+      "SID":"Wireless02-Wireless",
+      "target": ["Wireless"],
       "description": "External Entity User Potentially Denies Receiving Data",
       "details": "User claims that it did not receive data from a process on the other side of the trust boundary. Consider using logging or auditing to record the source, time, and summary of the received data.",
       "Likelihood Of Attack": "High",
@@ -50,8 +50,8 @@
       "mitigations": "Encourage secure logging so we could record if the user actually receieved this data."
   },
   {
-      "SID":"WIFI03-Wireless",
-      "target": ["WIFI"],
+      "SID":"Wireless03-Wireless",
+      "target": ["Wireless"],
       "description": "Data flow transfer of data is potentially interupted.",
       "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
       "Likelihood Of Attack": "High",
@@ -446,7 +446,7 @@
       "SID":"INP062",
       "target": ["Wireless"],
       "description": "Potential lack of input validation for coonnect the board",
-      "details": "Data flowing across Wifi may be tampered with by an attacker. This may lead to a denial of service attack against Connect to the Board or an elevation of privilege attack against Connect to the Board or an information disclosure by Connect to the Board. Failure to verify that input is as expected is a root cause of a very large number of exploitable issues. Consider all paths and the way they handle data. Verify that all input is verified for correctness using an approved list input validation approach. (Buffer Overflow, Cross Site Scripting XXS, and SQL Injection attacks)",
+      "details": "Data flowing across Wireless may be tampered with by an attacker. This may lead to a denial of service attack against Connect to the Board or an elevation of privilege attack against Connect to the Board or an information disclosure by Connect to the Board. Failure to verify that input is as expected is a root cause of a very large number of exploitable issues. Consider all paths and the way they handle data. Verify that all input is verified for correctness using an approved list input validation approach. (Buffer Overflow, Cross Site Scripting XXS, and SQL Injection attacks)",
       "Likelihood Of Attack": "High",
       "severity": "High",
       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
@@ -472,12 +472,12 @@
       "SID":"INP064",
       "target": ["Wireless"],
       "description": "Data flow sniffing",
-      "details": "Data flowing across Wifi may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.",
+      "details": "Data flowing across Wireless may be sniffed by an attacker. Depending on what type of data an attacker can read, it may be used to attack other parts of the system or simply be a disclosure of information leading to compliance violations. Consider encrypting the data flow.",
       "Likelihood Of Attack": "High",
       "severity": "High",
       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
       "prerequisites": "",
-      "mitigations": "Keep the data encrypted while being sent through wifi. Consider encrypting wifi and securing it.",
+      "mitigations": "Keep the data encrypted while being sent through Wireless. Consider encrypting Wireless and securing it.",
       "example": "",
       "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
    },
@@ -497,13 +497,13 @@
    {
       "SID":"INP066",
       "target": ["Wireless"],
-      "description": "Data flow wifi is potentially interupted",
+      "description": "Data flow Wireless is potentially interupted",
       "details": "An external agent interrupts data flowing across a trust boundary in either direction.",
       "Likelihood Of Attack": "High",
       "severity": "High",
       "condition": "target.usesEnvironmentVariables is True and target.sanitizesInput is False and target.checksInputBounds is False",
       "prerequisites": "",
-      "mitigations": "Have a backup connection ready at all times. You should also have a strong wifi to prevent the detection of your router &#39;s IP address. ",
+      "mitigations": "Have a backup connection ready at all times. You should also have a strong Wireless to prevent the detection of your router &#39;s IP address. ",
       "example": "",
       "references": "https://capec.mitre.org/data/definitions/10.html, CVE-1999-0906, CVE-1999-0046, http://cwe.mitre.org/data/definitions/120.html, http://cwe.mitre.org/data/definitions/119.html, http://cwe.mitre.org/data/definitions/680.html"   
    },
