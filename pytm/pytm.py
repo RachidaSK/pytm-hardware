@@ -1181,7 +1181,7 @@ If only derivative data is stored (a hash) it can be set to False.""",
         return "{0}({1})".format(type(self).__name__, self.name)
 ## Must be revisited. Copy of data class/not original
 class Wired:
-    """Represents a single piece of data that traverses the system"""
+    "Represents a potential hardwire access point for an attacker. Data traversal structure"""
 
     name = varString("", required=True)
     description = varString("")
@@ -1239,9 +1239,9 @@ If only derivative data is stored (a hash) it can be set to False.""",
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
 
-## Must be revisited. Copy of data class/not original
+
 class Wireless:
-    """Represents a single piece of data that traverses the system"""
+    "Represents a potential wireless access point for an attacker. Method of Data traversal "
 
     name = varString("", required=True)
     description = varString("")
