@@ -321,8 +321,21 @@ matching elements connecting to SQL datastores, would be `any(f.sink.oneOf(Datas
 ```text
 UART01 - External Entity Unauthenticated User Potentially Denies Receiving Data
 UART02 - Spoofing of the Unauthenticated User External Destination Entity
+UART03 - Elevation by Changing the Execution Flow in Generic Process
+UART04 - Elevation by Changing the Execution Flow in Sends and Transmits Signals Wirelessly
+UART05 - Sends and Transmits Signals Wirelessly May be Subject to Elevation of Privilege Using Remote Code Execution
+UART06 - Potential Process Crash or Stop for Sends and Transmits Signals Wirelessly
 WIFI01 - Spoofing of the Attacker External Destination Entity
 WIFI02 - External Entity Attacker Potentially Denies Receiving Data
+WIFI03 - Spoofing the Unauthenticated User External Entity
+WIFI04 - Elevation Using Impersonation
+WIFI05 - Spoofing the Connect to the Board Process
+WIFI06 - Potential Lack of Input Validation for Connect to the Board
+WIFI07 - Potential Data Repudation by Connect to Board
+WIFI08 - Data Flow Sniffing
+WIFI09 - Potential Process Crash or Stop for Connect to the Board
+WIFI10 - Denial of Service happens when the process or datastore is not able to service incoming requests or perform up to spec
+WIFI11 - Connect to the Board May be Subject to Elevation of Privilege Using Remote Code Execution
 CLOUD01 - Data Logs from an Unknown Source
 CLOUD02 - Lower Trusted Subject Updates Logs
 CLOUD03 - Data Store Inaccessible
@@ -339,6 +352,18 @@ PC06 - Data Store Denies PC Potentially Writing Data
 PC07 - The PC Data Store Could Be Corrupted
 PC08 - Spoofing of Destination Data Store PC
 ICSP01 - Spoofing of the Unauthenticated User External Destination Entity
+ICSP02 - Potential Data Repudation by Connects Board to the Computer for Programming
+ICSP03 - Elevation using Impersonation
+ICSP04 - Potential Lack of Input Validation for Connects Board to the Computer for Programming
+ICSP05 - Spoofing the Connects Board to the Computer for Programming Process
+SPI01 - Unauthenticated User claims that it did not receive data from a process on the other side of the trust boundary
+SPI02 - Spoofing of the Unauthenticated User External Destination Entity
+SPI03 - Elevation by Changing the Execution Flow in Send Data Between Microcontrollers and Small Peripherals
+SPI04 - Send Data Between Microcontrollers and Small Peripherals May be subject to Elevation of Privilege Using Remote Code Execution
+SPI05 - Elevation using Impersonation
+SPI06 - Data Flow SPI is Potentially Interrupted
+SPI07 - Potential Process Crash or Stop for Send Data Between Microcontrollers and Small Peripherals
+SPI08 - Potential Data Repudiation by Send Data Between Microcontrollers and Small Peripherals
 
 
 
