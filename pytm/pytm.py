@@ -69,28 +69,32 @@ class var(object):
 class varString(var):
     def __set__(self, instance, value):
         if not isinstance(value, str):
-            raise ValueError("expecting a String value, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting a String value, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
 class varBoundary(var):
     def __set__(self, instance, value):
         if not isinstance(value, Boundary):
-            raise ValueError("expecting a Boundary value, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting a Boundary value, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
 class varBool(var):
     def __set__(self, instance, value):
         if not isinstance(value, bool):
-            raise ValueError("expecting a boolean value, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting a boolean value, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
 class varInt(var):
     def __set__(self, instance, value):
         if not isinstance(value, int):
-            raise ValueError("expecting an integer value, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting an integer value, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
@@ -143,21 +147,24 @@ class varFindings(var):
 class varAction(var):
     def __set__(self, instance, value):
         if not isinstance(value, Action):
-            raise ValueError("expecting an Action, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting an Action, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
 class varClassification(var):
     def __set__(self, instance, value):
         if not isinstance(value, Classification):
-            raise ValueError("expecting a Classification, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting a Classification, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
 class varLifetime(var):
     def __set__(self, instance, value):
         if not isinstance(value, Lifetime):
-            raise ValueError("expecting a Lifetime, got a {}".format(type(value)))
+            raise ValueError(
+                "expecting a Lifetime, got a {}".format(type(value)))
         super().__set__(instance, value)
 
 
@@ -368,14 +375,17 @@ def _apply_defaults(flows, data):
         e._safeset("dstPort", e.sink.port)
         if hasattr(e.sink, "isEncrypted"):
             e._safeset("isEncrypted", e.sink.isEncrypted)
-        e._safeset("authenticatesDestination", e.source.authenticatesDestination)
-        e._safeset("checksDestinationRevocation", e.source.checksDestinationRevocation)
+        e._safeset("authenticatesDestination",
+                   e.source.authenticatesDestination)
+        e._safeset("checksDestinationRevocation",
+                   e.source.checksDestinationRevocation)
 
         for d in e.data:
             if d.isStored:
                 if hasattr(e.sink, "isEncryptedAtRest"):
                     for d in e.data:
-                        d._safeset("isDestEncryptedAtRest", e.sink.isEncryptedAtRest)
+                        d._safeset("isDestEncryptedAtRest",
+                                   e.sink.isEncryptedAtRest)
                 if hasattr(e.source, "isEncryptedAtRest"):
                     for d in e.data:
                         d._safeset(
@@ -522,7 +532,8 @@ class Finding:
     """Represents a Finding - the element in question
     and a description of the finding"""
 
-    element = varElement(None, required=True, doc="Element this finding applies to")
+    element = varElement(None, required=True,
+                         doc="Element this finding applies to")
     target = varString("", doc="Name of the element this finding applies to")
     description = varString("", required=True, doc="Threat description")
     details = varString("", required=True, doc="Threat details")
@@ -621,7 +632,8 @@ class TM:
     )
     isOrdered = varBool(False, doc="Automatically order all Dataflows")
     mergeResponses = varBool(False, doc="Merge response edges in DFDs")
-    ignoreUnused = varBool(False, doc="Ignore elements not used in any Dataflow")
+    ignoreUnused = varBool(
+        False, doc="Ignore elements not used in any Dataflow")
     findings = varFindings([], doc="threats found for elements of this model")
     onDuplicates = varAction(
         Action.NO_ACTION,
@@ -668,7 +680,8 @@ with same properties, except name and notes""",
             # if element is a dataflow filter out overrides from source and sink
             # because they will be always applied there anyway
             try:
-                override_ids -= set(f.id for f in e.source.overrides + e.sink.overrides)
+                override_ids -= set(f.id for f in e.source.overrides +
+                                    e.sink.overrides)
             except AttributeError:
                 pass
 
@@ -706,7 +719,8 @@ a brief description of the system being modeled."""
                 )
 
         if self.ignoreUnused:
-            TM._elements, TM._boundaries = _get_elements_and_boundaries(TM._flows)
+            TM._elements, TM._boundaries = _get_elements_and_boundaries(
+                TM._flows)
 
         result = True
         for e in TM._elements:
@@ -828,15 +842,18 @@ a brief description of the system being modeled."""
         for e in TM._elements:
             if isinstance(e, Actor):
                 participants.append(
-                    'actor {0} as "{1}"'.format(e._uniq_name(), e.display_name())
+                    'actor {0} as "{1}"'.format(
+                        e._uniq_name(), e.display_name())
                 )
             elif isinstance(e, Datastore):
                 participants.append(
-                    'database {0} as "{1}"'.format(e._uniq_name(), e.display_name())
+                    'database {0} as "{1}"'.format(
+                        e._uniq_name(), e.display_name())
                 )
             elif not isinstance(e, Dataflow) and not isinstance(e, Boundary):
                 participants.append(
-                    'entity {0} as "{1}"'.format(e._uniq_name(), e.display_name())
+                    'entity {0} as "{1}"'.format(
+                        e._uniq_name(), e.display_name())
                 )
 
         messages = []
@@ -871,7 +888,8 @@ a brief description of the system being modeled."""
     def process(self):
         self.check()
         result = get_args()
-        logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+        logging.basicConfig(level=logging.INFO,
+                            format="%(levelname)s: %(message)s")
 
         if result.debug:
             logger.setLevel(logging.DEBUG)
@@ -979,7 +997,8 @@ class Element:
         doc="""Overrides to findings, allowing to set
 a custom response, CVSS score or override other attributes.""",
     )
-    levels = varInts({0}, doc="List of levels (0, 1, 2, ...) to be drawn in the model.")
+    levels = varInts(
+        {0}, doc="List of levels (0, 1, 2, ...) to be drawn in the model.")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1161,10 +1180,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1179,6 +1202,7 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
 
 class WIRED:
     "Represents a potential hardwire access point for an attacker. Data traversal structure"""
@@ -1220,10 +1244,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1238,6 +1266,8 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
+
 class PC:
     "Represents a potential hardwire access point for an attacker. Data traversal structure"""
 
@@ -1278,10 +1308,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1296,6 +1330,8 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
+
 class ICSP:
     "Represents a potential hardwire access point for an attacker. Data traversal structure"""
 
@@ -1336,10 +1372,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1354,6 +1394,8 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
+
 class WIFI:
     "Represents a potential wireless access point for an attacker. Method of Data traversal "
 
@@ -1394,10 +1436,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1412,6 +1458,71 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
+
+class SPI:
+    "Represents a potential wireless access point for an attacker. Method of Data traversal "
+
+    name = varString("", required=True)
+    description = varString("")
+    classification = varClassification(
+        Classification.PUBLIC,
+        required=True,
+        doc="Level of classification for this piece of data",
+    )
+    isPII = varBool(
+        False,
+        doc="""Does the data contain personally identifyable information.
+Should always be encrypted both in transmission and at rest.""",
+    )
+    isCredentials = varBool(
+        False,
+        doc="""Does the data contain authentication information,
+like passwords or cryptographic keys, with or without expiration date.
+Should always be encrypted in transmission. If stored, they should be hashed
+using a cryptographic hash function.""",
+    )
+    credentialsLife = varLifetime(
+        Lifetime.NONE,
+        doc="""Credentials lifetime, describing if and how
+credentials can be revoked. One of:
+* NONE - not applicable
+* UNKNOWN - unknown lifetime
+* SHORT - relatively short expiration date, with an allowed maximum
+* LONG - long or no expiration date
+* AUTO - no expiration date but can be revoked/invalidated automatically
+  in some conditions
+* MANUAL - no expiration date but can be revoked/invalidated manually
+* HARDCODED - cannot be invalidated at all""",
+    )
+    isStored = varBool(
+        False,
+        doc="""Is the data going to be stored by the target or only processed.
+If only derivative data is stored (a hash) it can be set to False.""",
+    )
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
+
+    def __init__(self, name, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+        self.name = name
+        TM._data.append(self)
+
+    def __repr__(self):
+        return "<{0}.{1}({2}) at {3}>".format(
+            self.__module__, type(self).__name__, self.name, hex(id(self))
+        )
+
+    def __str__(self):
+        return "{0}({1})".format(type(self).__name__, self.name)
+
 
 class CLOUDSERVER:
     "Represents a potential wireless access point for an attacker. Method of Data traversal "
@@ -1453,10 +1564,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1471,6 +1586,7 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
 
 class UART:
     "Represents a potential wireless access point for an attacker. Method of Data traversal "
@@ -1512,10 +1628,14 @@ credentials can be revoked. One of:
         doc="""Is the data going to be stored by the target or only processed.
 If only derivative data is stored (a hash) it can be set to False.""",
     )
-    isDestEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at dest")
-    isSourceEncryptedAtRest = varBool(False, doc="Is data encrypted at rest at source")
-    carriedBy = varElements([], doc="Dataflows that carries this piece of data")
-    processedBy = varElements([], doc="Elements that store/process this piece of data")
+    isDestEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at dest")
+    isSourceEncryptedAtRest = varBool(
+        False, doc="Is data encrypted at rest at source")
+    carriedBy = varElements(
+        [], doc="Dataflows that carries this piece of data")
+    processedBy = varElements(
+        [], doc="Elements that store/process this piece of data")
 
     def __init__(self, name, **kwargs):
         for key, value in kwargs.items():
@@ -1530,12 +1650,16 @@ If only derivative data is stored (a hash) it can be set to False.""",
 
     def __str__(self):
         return "{0}({1})".format(type(self).__name__, self.name)
+
+
 class Asset(Element):
     """An asset with outgoing or incoming dataflows"""
 
     port = varInt(-1, doc="Default TCP port for incoming data flows")
-    isEncrypted = varBool(False, doc="Requires incoming data flow to be encrypted")
-    protocol = varString("", doc="Default network protocol for incoming data flows")
+    isEncrypted = varBool(
+        False, doc="Requires incoming data flow to be encrypted")
+    protocol = varString(
+        "", doc="Default network protocol for incoming data flows")
     data = varData([], doc="Default type of data in incoming data flows")
     inputs = varElements([], doc="incoming Dataflows")
     outputs = varElements([], doc="outgoing Dataflows")
@@ -1615,7 +1739,8 @@ class Lambda(Asset):
             label=self._label(),
             color=self._color(),
             shape=self._shape(),
-            image=os.path.join(os.path.dirname(__file__), "images", "lambda.png"),
+            image=os.path.join(os.path.dirname(__file__),
+                               "images", "lambda.png"),
         )
 
     def _shape(self):
@@ -1723,7 +1848,8 @@ class Actor(Element):
     """An entity usually initiating actions"""
 
     port = varInt(-1, doc="Default TCP port for outgoing data flows")
-    protocol = varString("", doc="Default network protocol for outgoing data flows")
+    protocol = varString(
+        "", doc="Default network protocol for outgoing data flows")
     data = varData([], doc="Default type of data in outgoing data flows")
     inputs = varElements([], doc="incoming Dataflows")
     outputs = varElements([], doc="outgoing Dataflows")
@@ -1807,7 +1933,8 @@ class Dataflow(Element):
     source = varElement(None, required=True)
     sink = varElement(None, required=True)
     isResponse = varBool(False, doc="Is a response to another data flow")
-    response = varElement(None, doc="Another data flow that is a response to this one")
+    response = varElement(
+        None, doc="Another data flow that is a response to this one")
     responseTo = varElement(None, doc="Is a response to this data flow")
     srcPort = varInt(-1, doc="Source TCP port")
     dstPort = varInt(-1, doc="Destination TCP port")
@@ -1999,7 +2126,8 @@ def serialize(obj, nested=False):
                 and not isinstance(value, str)
                 and isinstance(value, Iterable)
             ):
-                value = [v.id if isinstance(v, Finding) else v.name for v in value]
+                value = [v.id if isinstance(
+                    v, Finding) else v.name for v in value]
         result[i.lstrip("_")] = value
     return result
 
@@ -2011,7 +2139,8 @@ def get_args():
         help="""dumps all threat model elements and findings
 into the named sqlite file (erased if exists)""",
     )
-    _parser.add_argument("--debug", action="store_true", help="print debug messages")
+    _parser.add_argument("--debug", action="store_true",
+                         help="print debug messages")
     _parser.add_argument("--dfd", action="store_true", help="output DFD")
     _parser.add_argument(
         "--report",
@@ -2019,7 +2148,8 @@ into the named sqlite file (erased if exists)""",
 (sample template file is under docs/template.md)""",
     )
     _parser.add_argument("--exclude", help="specify threat IDs to be ignored")
-    _parser.add_argument("--seq", action="store_true", help="output sequential diagram")
+    _parser.add_argument("--seq", action="store_true",
+                         help="output sequential diagram")
     _parser.add_argument(
         "--list", action="store_true", help="list all available threats"
     )

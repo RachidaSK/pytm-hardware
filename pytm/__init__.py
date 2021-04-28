@@ -19,7 +19,7 @@ __all__ = [
     "Threat",
     "TM",
     "Wired",
-    "Wireless"
+    "Wireless",
 ]
 
 import sys
