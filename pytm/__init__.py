@@ -43,8 +43,8 @@ from .pytm import (
     Server,
     SetOfProcesses,
     Threat,
-    Wired,
-    Wireless,
+    WIRED,
+    WIFI,
     var,
 )
 
